@@ -18,7 +18,7 @@ app.post("/form", (req, res) => {
       subject: `${req.fields.subject}`,
       text: `${req.fields.message}`,
     };
-    mg.messages().send(data, function (error, body) {
+    mg.messages().send(data, (error, body) => {
       res.json(body);
       if (error) {
         res.json({ error: error });
